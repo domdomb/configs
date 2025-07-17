@@ -1,4 +1,5 @@
--- to add a new language server, add that language server to "ensure_install" block then add that language server to lspconfig under the nvim-lspconfig plugin
+-- to add a new language server, add that language server to "ensure_install" block then add that language server 
+-- to lspconfig under the nvim-lspconfig plugin
 
 return {
   {
