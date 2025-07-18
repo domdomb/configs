@@ -31,7 +31,10 @@ vim.keymap.set('n', '<leader>n', ':Neotree filesystem reveal left<CR>', {})
 -- Formatters
 vim.keymap.set('n', '<leader>fj', ':%!jq .<CR>', { desc = "Format JSON with jq" })
 
--- Tab format
+-- General Settings
 vim.opt.expandtab = true      -- use spaces instead of tabs
-
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.fillchars = { eob = " " } -- Remove
 

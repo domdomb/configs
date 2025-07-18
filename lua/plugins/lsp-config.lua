@@ -23,6 +23,8 @@ return {
       lspconfig.terraformls.setup({})
       lspconfig.lua_ls.setup({})
       vim.keymap.set('n', '<leader>j', vim.lsp.buf.hover, {})
+      vim.keymap.set('n', '<leader>d', vim.lsp.buf.definition, {})
+      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
       -- Configure diagnostics
       vim.diagnostic.config({
         virtual_text = {
@@ -38,5 +40,4 @@ return {
   }
 
 }
-
 
