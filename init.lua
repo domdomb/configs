@@ -1,8 +1,13 @@
+-- disable mouse support
+vim.o.mouse = ""
+
 -- keep undo
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("state") .. "/undo"
+
 -- Line numbers
-vim.o.number = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- Syntax highlighting (redundant with Treesitter, but safe)
 vim.cmd("syntax on")
@@ -22,3 +27,11 @@ require("config.lazy")
 
 -- NEOTREE
 vim.keymap.set('n', '<leader>n', ':Neotree filesystem reveal left<CR>', {})
+
+-- Formatters
+vim.keymap.set('n', '<leader>fj', ':%!jq .<CR>', { desc = "Format JSON with jq" })
+
+-- Tab format
+vim.opt.expandtab = true      -- use spaces instead of tabs
+
+

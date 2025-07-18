@@ -23,6 +23,17 @@ return {
       lspconfig.terraformls.setup({})
       lspconfig.lua_ls.setup({})
       vim.keymap.set('n', '<leader>j', vim.lsp.buf.hover, {})
+      -- Configure diagnostics
+      vim.diagnostic.config({
+        virtual_text = {
+          severity = vim.diagnostic.severity.ERROR,
+          prefix = "●",
+          spacing = 2,
+        },
+      })
+
+      -- Optional: make the error symbol red
+      vim.cmd([[highlight DiagnosticVirtualTextError guifg=#ff5555]])
     end
   }
 
