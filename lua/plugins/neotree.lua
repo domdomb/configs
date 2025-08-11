@@ -14,6 +14,22 @@ return {
           hide_gitignored = false,
         },
       },
+      window = {
+        width = 40,
+        mappings = {
+          ["."] = "set_root",      -- Go into the selected folder
+          [","] = "navigate_up",   -- Go up one directory
+        },
+      },
+      event_handlers = {
+        {
+          event = "neo_tree_buffer_enter",
+          handler = function()
+            vim.wo.number = true
+            vim.wo.relativenumber = false
+          end,
+        },
+      },
     },
   },
 }

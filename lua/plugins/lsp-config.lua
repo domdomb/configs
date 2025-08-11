@@ -20,7 +20,11 @@ return {
     "neovim/nvim-lspconfig",
     config = function()
       local lspconfig = require("lspconfig")
-      lspconfig.terraformls.setup({})
+      lspconfig.terraformls.setup({
+        handlers = {
+          ["textDocument/publishDiagnostics"] = function() end,
+        },
+      })
       lspconfig.lua_ls.setup({})
       vim.keymap.set('n', '<leader>j', vim.lsp.buf.hover, {})
       vim.keymap.set('n', '<leader>d', vim.lsp.buf.definition, {})
@@ -30,7 +34,7 @@ return {
         virtual_text = {
           severity = vim.diagnostic.severity.ERROR,
           prefix = "●",
-          spacing = 2,
+          spacing = 1,
         },
       })
 
