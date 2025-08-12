@@ -41,6 +41,7 @@ vim.o.scrolloff = 25
 vim.o.sidescrolloff = 25
 vim.opt.ignorecase = true -- search options
 vim.opt.smartcase = true -- search option
+vim.opt.splitright = true -- causes vsplit to open right
 
 -- creates a trailing line at the end of files on write
 vim.api.nvim_create_autocmd("BufWritePre", {
